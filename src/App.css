@@ -1,0 +1,7 @@
+function App() {
+  return (
+    <h1>Lillmusties Kennel</h1>
+  )
+}
+
+export default App
