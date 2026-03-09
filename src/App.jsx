@@ -8,6 +8,10 @@ import Dogs from "./pages/Dogs"
 import Puppies from "./pages/Puppies"
 import Contact from "./pages/Contact"
 import About from "./pages/About"
+import CurrentPuppies from "./pages/CurrentPuppies"
+import PlannedPuppies from "./pages/PlannedPuppies"
+import PreviousPuppies from "./pages/PreviousPuppies"
+
 
 function App() {
   return (
@@ -17,8 +21,11 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dogs" element={<Dogs />} />
-        <Route path="/puppies" element={<Puppies />} />
+        <Route path="/våra-hundar" element={<Dogs />} />
+        <Route path="/valpar" element={<Puppies />} />
+        <Route path="/aktuella-kullar" element={<CurrentPuppies />} />
+        <Route path="/planerade-kullar" element={<PlannedPuppies />} />
+        <Route path="/tidigare-kullar" element={<PreviousPuppies />} />
         <Route path="/kontakt" element={<Contact />} />
         <Route path="/om-oss" element={<About />} />
       </Routes>

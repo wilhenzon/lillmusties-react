@@ -69,6 +69,54 @@ function Dogs() {
 
       </div>
 
+	  <p className="memory-text">
+        Hundar som betytt mycket för oss och som alltid finns kvar i våra hjärtan.
+      </p>
+
+      <section className="hund-grid">
+
+        <div className="hund-card">
+          <img src="/images/mustie.jpg" alt="Mustie" />
+          <div className="hund-info">
+            <h4>Mustie</h4>
+            <p>Ingen anged födelsedag</p>
+          </div>
+        </div>
+
+        <div className="hund-card">
+          <img src="/images/e-mina.jpg" alt="E-Mina" />
+          <div className="hund-info">
+            <h4>E-Mina</h4>
+            <p>2000-04-30</p>
+          </div>
+        </div>
+
+        <div className="hund-card">
+          <img src="/images/Ronja.jpg" alt="Ronja" />
+          <div className="hund-info">
+            <h4>Ronja</h4>
+            <p>1996-10-26</p>
+          </div>
+        </div>
+
+        <div className="hund-card">
+          <img src="/images/ella.jpg" alt="Nilla Ella" />
+          <div className="hund-info">
+            <h4>Nilla “Ella”</h4>
+            <p>1992-??-??</p>
+          </div>
+        </div>
+
+        <div className="hund-card">
+          <img src="/images/Vanja.jpg" alt="Vanja" />
+          <div className="hund-info">
+            <h4>Vanja</h4>
+            <p>1987-??-??</p>
+          </div>
+        </div>
+
+      </section>
+
     </main>
   )
 }

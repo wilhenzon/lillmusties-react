@@ -6,21 +6,20 @@ function Puppies() {
 
       <div className="valp-navigation">
 
-        <a href="#" className="valp-card">
-          <img src="/images/aktuellakullar.jpg" alt="Aktuella kullar" />
-          <span>Aktuella kullar</span>
-        </a>
+       <Link to="/aktuella-kullar" className="valp-card">
+			<img src="/images/aktuellakullar.jpg" alt="Aktuella kullar" />
+			<span>Aktuella kullar</span>
+		</Link>
 
-        <a href="#" className="valp-card">
-          <img src="/images/Planeradekullar.jpg" alt="Planerade kullar" />
-          <span>Planerade kullar</span>
-        </a>
+		<Link to="/planerade-kullar" className="valp-card">
+			<img src="/images/Planeradekullar.jpg" alt="Planerade kullar" />
+			<span>Planerade kullar</span>
+		</Link>
 
-        <a href="#" className="valp-card">
-          <img src="/images/tidigarekullar.jpg" alt="Tidigare kullar" />
-          <span>Tidigare kullar</span>
-        </a>
-
+		<Link to="/tidigare-kullar" className="valp-card">
+			<img src="/images/tidigarekullar.jpg" alt="Tidigare kullar" />
+			<span>Tidigare kullar</span>
+		</Link>
       </div>
 
       <div className="puppy">
