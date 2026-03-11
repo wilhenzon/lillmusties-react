@@ -25,6 +25,8 @@ function Header() {
   const parentName = parentPath ? routeNames[parentPath] : null
   const isHome = location.pathname === "/"
 
+  
+  
   return (
     <header className="site-header">
       <div className="header-inner">
@@ -59,8 +61,7 @@ function Header() {
         )}
       </div>
 
-
-<Navbar closeOnNavigate={true} />    
+      <Navbar />
 </header>
   )
 }

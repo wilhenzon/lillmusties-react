@@ -2,7 +2,9 @@ import { Link } from "react-router-dom"
 import { useState } from "react"
 
 function Navbar() {
-  const [valpOpen, setValpOpen] = useState(false)
+   const [valpOpen, setValpOpen] = useState(false)
+
+ 
 
   return (
     <nav id="menu" className="side-menu">
