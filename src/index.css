@@ -1,68 +1,825 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* =========================
+   GENERAL
+========================= */
+ *{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+  }
+  
+  body {
+	font-family: Georgia, "Times New Roman", serif;
+	line-height: 1.5;
+	color: #000;
+  }
+  
+  p {
+	margin-bottom: 1rem;
+  }
+  
+  h2 {
+	margin-bottom: 1.5rem;
+  }
+  
+  h3 {
+	margin: 1.5rem 0 0.75rem;
+  }
+  
+  
+  
+  /* =========================
+	 HEADER
+  ========================= */
+.site-header {
+  background: linear-gradient(#777F34, #8C9156);	
+  width: 100%;
 }
+  
+  .header-inner {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	  gap: 2rem;   /* lagom mellanrum */
+  }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
+.brand {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  .brand h1 {
+	font-size: 2rem;
+	color: white;
+  }
+  
+  .logo{
+	 height: 70px;   /* justera efter smak */
+  width: auto;
+  }
+  
+  .tagline {
+	font-size: 0.85rem;
+	color: white;
+  }
+  
+  /* =========================
+	 NAVBAR
+  ========================= */
+  .sub-nav {
+	padding: 2rem;
+	background-color: #2f3b1f;
+	color: white;
+	padding: 0.4rem 1.5rem;
+	font-size: 0.9rem;
+	width: 100%;
+  }
+  
+  .sub-nav a {
+	color: white;
+	text-decoration: none;
+	font-weight: 400;
+  }
+  
+  .sub-nav a:visited {
+	color: white;
+  }
+  
+  .sub-nav a:hover {
+	text-decoration: underline;
+  }
+  
+  .sub-nav .current {
+	font-weight: 700;
+	color: white;
+  }
+
+  .main-nav ul {
+	list-style: none;
+	display: flex;
+	gap: 1.5rem;
+  }
+  
+  .main-nav a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+  }
+  
+  .main-nav a:hover {
+	text-decoration: underline;
+  }
+  
+
+  /* =========================
+   SIDEMENUE
+========================= */
+.menu-button {
+	border: 2px solid #2f3b1f;
+	padding: 0.5rem 1rem;
+	text-decoration: none;
+	font-weight: 600;
+	color: #2f3b1f;
+	display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+
+.menu-button .text {
+  display: inline;
+}
+
+.side-menu {
+	position: fixed;
+	top: 0;
+	right: -320px;
+	width: 320px;
+	height: 100%;
+	background: linear-gradient(#777F34, #959A5D);
+	transition: right 0.4s ease;
+	padding-top: 2rem;
+	z-index: 1000;
+}
+
+#menu:target {
+	right: 0;
+}
+
+.close-btn {
+	display: block;
+	text-align: right;
+	padding: 0 1rem 1rem;
+	font-size: 1.5rem;
+	text-decoration: none;
+	color: #2f3b1f;
+}
+
+.menu-list {
+	list-style: none;
+	padding: 0;
+}
+
+.menu-list > li {
+	border-top: 1px solid rgba(255,255,255,0.5);
+}
+
+.menu-list > li > a {
+	display: block;
+	padding: 1.2rem;
+	color: white;
+	text-decoration: none;
+	font-size: 1.3rem;
+	font-weight: 600;
+}
+
+.menu-list > li > a:hover {
+	background: rgba(255,255,255,0.1);
+}
+
+.submenu-container {
+	position: relative;
+}
+
+
+.menu-link-with-sub {
+	display: block;
+	padding: 1.2rem;
+	color: white;
+	text-decoration: none;
+	font-size: 1.3rem;
+	font-weight: 600;
+}
+
+.menu-link-with-sub:hover {
+	background: rgba(255,255,255,0.1);
+}
+
+.breadcrumb-sep {
+  color: white;
+  margin: 0 0.2rem;
+}
+
+
+.submenu {
+	list-style: none;
+	background: rgba(255,255,255,0.1);
+	margin: 0;
+	padding: 0;
+}
+
+.submenu li {
+	border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+.submenu li a {
+	display: block;
+	font-size: 1.1rem;
+	padding: 1rem 1.2rem 1rem 2.5rem;
+	color: white;
+	text-decoration: none;
+}
+
+.submenu li a:hover {
+	background: rgba(255,255,255,0.15);
+}
+
+.menu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plus-icon {
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-size: 22px;
+  line-height: 1;
+  color: white;          /* vit som standard */
+  transition: color 0.3s ease;
+  padding:1rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.plus-icon:hover {
+  color: #6b2a2a;        /* din röda färg */
 }
+/* =========================
+	 FOOTER
+  ========================= */
+  .site-footer {
+	background-color: #d7dbc3;
+	margin-top: 3rem;
+	width: 100%;
+  }
+  
+  .footer-inner {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 1.5rem;
+	text-align: center;
+	font-size: 0.9rem;
+  }
+  
+  .site-footer a {
+	color: #000;
+  }
+
+ /* =========================
+	 STARTSIDA
+  ========================= */
+  .page-title{
+	padding: 2rem;
+  }
+
+ .framsida {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+  .framsida video {
+	width: 100%;
+	height: 700px;
+	object-fit: cover;
+	display: block;
+  }
+ 
+  .start {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem 1.5rem;
+  }
+  
+  .btn {
+	display: inline-block;
+	padding: 0.4rem 0.9rem;
+	border: 2px solid #7f8b4a;
+	border-radius: 8px;
+	background-color: transparent;
+	color: #000;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 0.9rem;
+  }
+  
+  .btn:hover {
+	background-color: #7f8b4a;
+	color: white;
+  }
+  
+  .news {
+	background-color: #6b2a2a;
+	color: white;
+	padding: 1rem 1.25rem;
+	border-radius: 6px;
+  }
+
+.draggable-dog {
+  width: 180px;
+	left:20px;
+  cursor: grab;
+}
+
+@keyframes spinDog {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin {
+  animation: spinDog 0.8s ease-in-out;
+}
+
+.dropzone {
+  width: 122px;
+  height: 30px;
+  border: 3px dashed #b87575;
+  margin: 1rem;
+  margin-left: 3rem;
+}
+.drop{
+	color: #b87575;
+}
+
+  
+  /* =========================
+	 OM OSS
+  ========================= */
+  
+  .rubrik-omoss {
+	padding: 1rem 2rem;
+	margin: 0;
+  }
+  
+  .about-top {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 2rem;
+	padding: 0 2rem 2rem 2rem;
+  }
+  
+  .about-image img {
+	width: 100%;
+	height: auto;
+	border-radius: 6px;
+	display: block;
+  }
+
+  .full-text {
+	padding: 0 2rem 2rem 2rem;
+  }
+
+  .full-text h3 {
+	margin-top: 0.5rem;
+  }
+  .reportage-image {
+	width: 100%;
+	margin: 2rem 0 0;
+  }
+  
+  .reportage-image img {
+	width: 100%;
+	height: auto;
+	display: block;
+  }
+
+  .reportage-text {
+	padding: 2rem;
+  }
+
+  /* =========================
+   VÅRA HUNDAR
+========================= */
+
+.intro-text {
+	padding: 0 2rem 1rem 2rem;
+  }
+  
+  .section-title {
+	padding: 2rem 2rem 1rem 2rem;
+  }
+  
+  .memory-text {
+	padding: 0 2rem 1rem 2rem;
+  }
+  
+  .hund-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2rem;
+	padding: 0 2rem 2rem 2rem;
+  }
+  
+  .hund-card {
+	background: #f3f3f3;
+	overflow: hidden;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+	transition: transform 0.3s ease;
+  }
+  
+  .hund-card img {
+	width: 100%;
+	height: 320px;
+	object-fit: cover;
+	display: block;
+  }
+  
+  .hund-info {
+	padding: 1rem;
+	text-align: center;
+  }
+  
+  .hund-info h4 {
+	margin-bottom: 0.3rem;
+	font-size: 1.1rem;
+  }
+  
+  .hund-info p {
+	font-size: 0.9rem;
+	color: #555;
+  }
+
+  /* =========================
+   VALPAR
+========================= */
+.puppy{
+	padding: 2rem;
+}
+.valp-navigation {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	max-width: 1200px;
+	margin: 0 auto;
+  }
+  
+  .valp-card {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	text-decoration: none;
+  }
+  
+  .valp-card img {
+	width: 100%;
+	height: 260px;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.4s ease, filter 0.4s ease;
+  }
+  
+  .valp-card span {
+	position: absolute;
+	bottom: 7.5rem;
+	left: 5.5rem;
+	color: white;
+	font-size: 1.4rem;
+	font-weight: 700;
+	text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+	z-index: 2;
+  }
+  
+  .valp-card::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-color: rgba(0,0,0,0.25);
+	transition: background-color 0.4s ease;
+  }
+  
+  .valp-card:hover img {
+	transform: scale(1.05);
+	filter: brightness(70%);
+  }
+  
+  .valp-card:hover::after {
+	background-color: rgba(0,0,0,0.45);
+  }
+
+  .ras-info table {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 600px;
+}
+
+.ras-info {
+ width: 100%;
+ 	padding: 2rem;
+
+  }
+
+.ras-info th,
+.ras-info td {
+  border: 1px solid #ccc;
+  padding: 0.8rem;
+  text-align: left;
+}
+
+.ras-info th {
+  background-color: #7f8b4a;
+  color: white;
+}
+
+.ras-info a {
+  color: #6b2a2a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ras-info a:hover {
+  text-decoration: underline;
+}
+
+  
+  /* =========================
+	 AKTUELLA KULLAR
+  ========================= */
+  .aktuella-text{
+	padding: 2rem;
+  }
+
+  .aktuella-image {
+	width: 100vw;
+	margin-left: calc(50% - 50vw);
+	height: 400px;
+	overflow: hidden;
+  }
+  
+  .aktuella-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+  }
+
+  .valp-scroll {
+	display: flex;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+  }
+  
+  .valp-scroll img {
+	height: 250px;
+	flex: 0 0 auto;  
+  }
+  
+/* =========================
+   PLANERADE KULLAR 
+========================= */
+
+.planned-wrapper {
+  padding: 4rem 2rem;
+  background: #fff;
+}
+
+.planned-text, .planned-header{
+	color: white;
+}
+
+.planned-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #6b2a2a;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(156, 156, 156, 0.08);
+}
+
+.planned-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.planned-content {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.planned-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.planned-content p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.planned-button {
+  display: inline-block;
+  background: #fff;
+  color: #6b2a2a;
+  padding: 0.9rem 1.8rem;
+  border-radius: 8px;
+  width: 170px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.planned-button:hover {
+  background: #d78787;
+}
+
+
+/* =========================
+      KONTAKT LAYOUT
+========================= */
+
+.kontakt-layout {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 3rem;
+	padding: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+  }
+  
+  .kontakt-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+  }
+  
+ .kontakt-hero {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	min-height: 600px;
+  }
+ 
+  .kontakt-form {
+	width: 100%;
+  }
+  
+  .form-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.5rem;
+	margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+	display: flex;
+	flex-direction: column;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+	padding: 0.8rem;
+
+	border-radius: 6px;
+	font-family: inherit;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+	outline: none;
+	border-color: #7f8b4a;
+	box-shadow: 0 0 0 2px rgba(127,139,74,0.2);
+  }
+  .kontakt-form button {
+	margin-top: 2rem;  
+  }
+  
+  small {
+	font-size: 0.8rem;
+	margin-top: 0.3rem;
+	color: #666;
+  }
+
+
+
+
+
+  /* =========================
+	 RESPONSIVT
+  ========================= */
+  @media (max-width: 768px) {
+	.header-inner {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.brand h1 {
+		font-size: 1.6rem;
+		line-height: 1.1;
+	}
+	
+	.tagline {
+		font-size: 0.75rem;
+	}
+	  
+	.planned-card {
+    grid-template-columns: 1fr;
+  }
+
+  .planned-image {
+    height: 300px;
+  }
+.menu-button {
+    font-size: 0;
+  }
+
+  .menu-button .icon {
+    font-size: 1.8rem;
+  }
+	  
+	.start {
+		grid-template-columns: 1fr;
+	}
+	.framsida video {
+    height: 300px;
+  }
+
+  .valp-card span {
+    bottom: 1rem;
+    left: 1rem;
+  }
+  
+	.about-top {
+		grid-template-columns: 1fr;
+	}
+  
+	.main-nav ul {
+		display: none;
+	}
+
+	.current-litter {
+		grid-template-columns: 1fr;
+	}
+	
+	.puppy-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.valp-navigation {
+		grid-template-columns: 1fr;
+	}
+	
+	.valp-card img {
+		height: 220px;
+	}
+
+	.hund-grid {
+		grid-template-columns: 1fr;
+	}
+	
+	.hund-card img {
+		height: 250px;
+	}
+
+	.kontakt-hero {
+		grid-template-columns: 1fr;
+	}
+
+	.form-row {
+		grid-template-columns: 1fr;
+	}
+
+	.kontakt-image {
+		height: 300px;
+	}
+
+	.kontakt-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .kontakt-info {
+    grid-template-columns: 1fr;
+  }
+  }
+
+@media print {
+
+	.side-menu,
+	.menu-button,
+	.sub-nav,
+	.site-footer,
+	video {
+		display: none;
+	}
+
+	body {
+		background: white;
+		color: black;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+}
+
+  

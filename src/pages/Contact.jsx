@@ -8,7 +8,7 @@ function Contact() {
 
         <div className="kontakt-image">
           <img
-            src="/images/framsida.jpg"
+            src="../public/images/framsida.jpg"
             alt="Svensk lapphund"
           />
         </div>

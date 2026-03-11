@@ -4,13 +4,6 @@ function PlannedPuppies() {
   return (
     <main>
 
-      <div className="sub-nav">
-        <Link to="/">Start</Link>
-        <span>/</span>
-        <Link to="/puppies">Valpar</Link>
-        <span>/</span>
-        <span className="current">Planerade kullar</span>
-      </div>
 
       <h2 className="rubrik-omoss">Planerade kullar</h2>
 
@@ -20,7 +13,7 @@ function PlannedPuppies() {
 
           <div className="planned-image">
             <img
-              src="/images/framsida.jpg"
+              src="../public/images/framsida.jpg"
               alt="Svensk lapphund"
             />
           </div>

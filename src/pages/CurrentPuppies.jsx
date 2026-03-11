@@ -2,19 +2,12 @@ function CurrentPuppies() {
   return (
     <main>
 
-      <div className="sub-nav">
-        <a href="/">Start</a>
-        <span>/</span>
-        <a href="/puppies">Valpar</a>
-        <span>/</span>
-        <span className="current">Aktuella kullar</span>
-      </div>
 
       <h2 className="page-title">Aktuella kullar</h2>
 
       <div className="aktuella-image">
         <img
-          src="/images/valp1.jpg"
+          src="../public/images/valp1.jpg"
           alt="Slumpad valp"
         />
       </div>
@@ -40,11 +33,11 @@ function CurrentPuppies() {
 
       <div className="valp-scroll">
 
-        <img src="/images/valp1.jpg" alt="Valp 1" />
-        <img src="/images/valp2.jpg" alt="Valp 2" />
-        <img src="/images/valp3.jpg" alt="Valp 3" />
-        <img src="/images/valp4.jpg" alt="Valp 4" />
-        <img src="/images/tidigarekullar.jpg" alt="Valp 5" />
+        <img src="../public/images/valp1.jpg" alt="Valp 1" />
+        <img src="../public/images/valp2.jpg" alt="Valp 2" />
+        <img src="../public/images/valp3.jpg" alt="Valp 3" />
+        <img src="../public/images/valp4.jpg" alt="Valp 4" />
+        <img src="../public/images/tidigarekullar.jpg" alt="Valp 5" />
 
       </div>
 

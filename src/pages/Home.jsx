@@ -8,17 +8,14 @@ function Home() {
 
       <div className="framsida">
         <video autoPlay loop muted controls>
-          <source src="/images/lapphund.mp4" type="video/mp4" />
+          <source src="../public/images/lapphund.mp4" type="video/mp4" />
         </video>
       </div>
 	 <div className="start">
 
         <div className="intro">
-          <p>
-            Vi är Ingrid och Gert på Lillmusties Kennel, en
-            familjeuppfödning av svensk lapphund med rötter
-            ända tillbaka till 1971.
-          </p>
+          	<p>Vi är Ingrid och Gert på Lillmusties Kennel, en familjeuppfödning av svensk lapphund med rötter ända tillbaka till 1971. Våra hundar är självklara familjemedlemmar och vårt arbete med rasen präglas av engagemang, kunskap och lång erfarenhet. Sedan vår första valpkull 1994 har vi fött upp mentalt stabila, friska hundar med framgångar på utställningar i Sverige och Europa. Mentalitet, funktion och rasens framtid står alltid i centrum för vårt arbete. Vi följer Svenska Kennelklubbens regler och erbjuder trygg vägledning till våra valpköpare, från första kontakt och genom hela hundens liv. </p>
+
 
           <p>
             Är du intresserad av svensk lapphund är du varmt

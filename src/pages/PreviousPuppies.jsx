@@ -4,13 +4,7 @@ function PreviousPuppies() {
   return (
     <main>
 
-      <div className="sub-nav">
-        <Link to="/">Start</Link>
-        <span>/</span>
-        <Link to="/puppies">Valpar</Link>
-        <span>/</span>
-        <span className="current">Tidigare kullar</span>
-      </div>
+
 
       <h2 className="rubrik-omoss">Tidigare kullar</h2>
 
