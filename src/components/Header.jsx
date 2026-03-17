@@ -20,10 +20,11 @@ const parentRoutes = {
 
 function Header() {
   const location = useLocation()
-  const pageName = routeNames[location.pathname] || "Start"
-  const parentPath = parentRoutes[location.pathname]
+  const pathname = decodeURIComponent(location.pathname)
+  const pageName = routeNames[pathname] || "Start"
+  const parentPath = parentRoutes[pathname]
   const parentName = parentPath ? routeNames[parentPath] : null
-  const isHome = location.pathname === "/"
+  const isHome = pathname === "/"
 
   
   
